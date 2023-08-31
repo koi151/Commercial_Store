@@ -23,7 +23,12 @@ function ProductFilter() {
 
     if (!productsLoading) {
       products.forEach((product) => {
-        uniqueCategories.add(product.category);
+        let word = product.category;
+        if (word.length >= 3 && word.slice(-3) === 'ies')
+          uniqueCategories.add(word.slice(0, -3));
+        else if (word.endsWith('s')) 
+          uniqueCategories.add(word.slice(0, -1));
+        else uniqueCategories.add(word);
       })
       setCategories([...uniqueCategories]);
     }

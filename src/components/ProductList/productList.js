@@ -24,6 +24,7 @@ function ProductList() {
     const fetchAPI = async () => {
       try {
         console.log('DATA FETCHING');
+        console.log('SEARCH CHECK 2:', curSearchTerm);
         const result = await getProductList(curSearchTerm, sortBy, order, minPrice, maxPrice);
         dispatch(setProducts(result.products));
         console.log('DATA FETCHED');
