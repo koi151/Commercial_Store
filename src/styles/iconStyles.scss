@@ -1,0 +1,22 @@
+// src/styles/iconStyles.scss
+
+%icon-wrapper { 
+    display: flex;
+    text-align: center;
+    list-style-type: none;
+    padding: 1rem;
+    background-color: #c08218;
+    border-radius: 8px;
+    transition: all 0.2s;
+
+    &:hover, &:hover > * {
+        transform: scale(1.1);
+        color: #fff;
+    }
+}
+
+%icon {
+    font-size: 2.2rem;
+    color: #fff;
+    transition: all 0.2s;
+}

@@ -1,0 +1,32 @@
+// LOGO SCSS
+
+$color-logo: #ffffff;
+$logo-size: 4rem;
+
+$logo-text-size: 2.5rem;
+$logo-text-weight: bold;
+
+.logo-wrapper {
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        width: 13.2rem;
+    }
+
+    &__logo {
+        font-size: $logo-size;
+        color: $color-logo;    
+    }
+
+    &__logo-text {
+        font-size: $logo-text-size;
+        font-weight: $logo-text-weight;
+        color: #fff;
+        text-decoration: none;
+        letter-spacing: 0.03rem;
+    }
+
+}

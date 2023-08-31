@@ -1,0 +1,115 @@
+@import '../../../styles//base.scss';
+
+%btn-style-one {
+    border: 1px solid #000;
+    border-radius: 13px;
+    margin-right: 1rem;
+    width: 6rem;
+    padding: 0.7rem 1rem;
+}
+
+.criteria-wrapper {
+    margin: 1rem 3rem 1rem 0rem;
+    min-width: 22rem;
+    display: flex;
+    flex-direction: column;
+    font-family: $barlow-condensed-font;
+
+    &__title {
+        letter-spacing: 0.04rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid $color-four;
+
+        h2 {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 1.95rem;
+            margin: 0;
+        }
+
+        &--drop-down-icon {
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+            color: $color-three;
+            cursor: pointer;
+        }
+    }
+
+    &__criterias-list {
+        
+        .radio-wrapper-all {
+            display: flex;
+            flex-direction: column;
+            padding: 0.25rem 0rem;
+
+            .radio-wrapper {
+                display: flex;
+
+                .radio-label {
+                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    color: $color-three;
+                    text-transform: capitalize;
+                    width: 100%;
+                }
+        
+                .criteria-radio {
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .reset-btn {
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        max-width: 8rem;
+        border: none;
+        padding: 0.3rem 1.5rem;
+        margin: 1.5rem 0rem;
+    }
+
+    .price-range-wrapper {
+        &__price-range {
+            @extend %btn-style-one;
+
+            &::placeholder {
+                font-size: 1.5rem;
+                color: $color-three;
+            }
+        }
+
+        .price-range-update {
+            margin: 0.5rem 0rem;
+            background-color: #000;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 13px; 
+        }
+
+        .price-trend-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: center;
+    
+            &__price-trend {
+                @extend %btn-style-one;
+                margin-top: 0.75rem;
+                margin-bottom: 1rem;
+                width: 9rem;
+                background-color: #fff;
+    
+                &--icon {
+                    font-size: 1.2rem;
+                    margin-left: 0.5rem;
+                    margin-bottom: 0.2rem;
+                }
+            }
+        }
+    }
+}

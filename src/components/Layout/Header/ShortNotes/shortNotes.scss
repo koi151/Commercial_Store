@@ -1,0 +1,17 @@
+@import '../../../../styles/base.scss';
+
+.short-notes-wrapper {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: $color-two;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    .note {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}

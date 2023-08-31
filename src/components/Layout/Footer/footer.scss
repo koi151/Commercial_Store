@@ -1,0 +1,19 @@
+// FOOTER SCSS - TESTING ONLY
+
+footer {
+    background-color: #161313;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin-top: 4rem;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

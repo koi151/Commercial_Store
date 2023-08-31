@@ -1,0 +1,18 @@
+$enable-container-classes: true;
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$enable-container-classes: true;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+}
+

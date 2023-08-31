@@ -1,0 +1,30 @@
+// Navigation/UserCartWrapper/userCartWrapper.scss
+
+@import '../../../../../styles/iconStyles.scss';
+
+$user-cart-bg-color: #c08218;
+$user-cart-icon-color: #fff;
+
+.user-cart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 16.5rem;
+    padding: 0;
+    margin: 0;
+
+    &__icon-wrapper {
+        @extend %icon-wrapper;
+        background-color: $user-cart-bg-color;
+    }
+
+    &__icon {
+        @extend %icon;
+        font-weight: bolder;
+        color: $user-cart-icon-color;
+    }
+
+    svg {
+        stroke-width: 2;
+    }
+}

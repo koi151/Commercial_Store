@@ -1,0 +1,105 @@
+//  PRODUCT LIST SCSS
+@import '../../styles/base.scss';
+
+$color-product-price: #f8b118;
+
+$font-size-title: 2rem;
+$color-title: #000;
+
+$font-size-brand: 1.6rem;
+$font-size-stock: 1.4rem;
+
+$add-to-cart-icon: 2.5rem;
+
+.products-wrapper {
+    display: flex;
+
+    .filters {
+        width: 80rem;
+    }
+
+    .product-list-title {
+        text-align: center;
+        font-weight: bold;
+        margin: 2rem 0rem;
+    }
+
+    .product {
+        border-radius: 10px;
+        position: relative;
+        width: 97%;
+        overflow: hidden;
+        box-shadow:rgba(0, 0, 0, 0.12) 0px 8px 24px 0px;
+        margin-bottom: 5rem;
+
+        img {
+            position: relative;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        &__content-wrapper {
+            padding: 2rem;
+
+            &--title {
+                display: flex;
+                flex-wrap: nowrap;
+                font-size: $font-size-title;
+                font-weight: bold;
+                color: $color-title;
+            }
+            
+            .content {
+                margin-top: .75rem;
+                margin-bottom: .75rem;
+                position: relative;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .left-content {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    &--brand {
+                    font-size: $font-size-brand;
+                    padding: 0.2rem 0rem;   
+                    }
+
+                    &--price {
+                        color: $color-product-price;
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                    }
+                }
+
+                .right-content {
+                    display: flex;
+                    text-align: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    min-width: 8rem;
+
+                    &--stock {
+                        font-size: $font-size-stock;
+                        font-style: italic;
+                    }
+
+                    &--add-to-cart {
+                        display: flex;
+                        margin-top: .65rem;
+                        align-self: center;
+                        font-size: $add-to-cart-icon;
+                        cursor: pointer;
+                        color: $color-two-lighter;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

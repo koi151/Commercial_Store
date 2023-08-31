@@ -1,0 +1,54 @@
+// MENU LIST SCSS
+@import '../../../../../styles//base.scss';
+
+$menu-wrapper-size: 40rem;
+
+$color-menu-text: #fff;
+$color-menu-hover: #c08218;
+
+.menu-wrapper {
+    font-family: $barlow-condensed-font;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: flex;
+    width: $menu-wrapper-size;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+    .menu {
+        list-style-type: none;
+        font-size: 1.95rem;
+        font-weight: 600;
+        transition: all .2s;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        line-height: 8rem;
+        display: flex;
+        justify-content: center;
+
+        &__link {
+            transition: all .3s;
+            text-align: center;
+            position: relative;
+            display: block; 
+            height: 100%;
+            width: 100%; 
+            color: $color-menu-text;
+            text-decoration: none;
+
+            &:hover:not(&--active) { /* Sử dụng :not để loại trừ .menu__link--active */
+                color: $color-menu-hover;
+            }
+            
+            &--active {
+                background-color: $color-menu-hover;
+                color: #fff;
+            }
+        }
+    }
+}
