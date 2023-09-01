@@ -1,33 +1,35 @@
-import { memo, } from 'react'
+import { memo, useEffect } from 'react';
 import Navigation from './Navigation/navigation';
 import ShortNotes from './ShortNotes/shortNotes';
-import './header.scss'
+import './header.scss';
 
 function Header() {
-
-  const navbar = document.querySelector('header');
-  let lastScrollTop = 0;
-
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 90 ) 
-      // Scrolling down, hide the navbar
-      navbar.style.top = '-110px';
-    else 
-      // Scrolling up, show the navbar
-      navbar.style.top = '0';
-    lastScrollTop = scrollTop;
-  });
+  useEffect(() => {
+    const header = document.querySelector('header');
+    let lastScrollTop = 0;
+    const onScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop && scrollTop > 90) {
+        // Scrolling down, hide the navbar
+        header.style.top = '-110px';
+      } else {
+        // Scrolling up, show the navbar
+        header.style.top = '0';
+      }
+      lastScrollTop = scrollTop;
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <>
       <header>
-        <ShortNotes/>
+        <ShortNotes />
         <Navigation />
       </header>
     </>
-  )
+  );
 }
 
 export default memo(Header);
