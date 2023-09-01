@@ -1,11 +1,15 @@
 // src/styles/iconStyles.scss
 
+@import './base.scss';
+
 %icon-wrapper { 
     display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     list-style-type: none;
     padding: 1rem;
-    background-color: #c08218;
+    background-color: $color-six;
     border-radius: 8px;
     transition: all 0.2s;
 

@@ -5,8 +5,6 @@ import { getProducts, getProductsLoadingStatus, setProducts } from '../../featur
 import { getSearchTerm, getCategorySearch } from '../../features/search/searchSlice';
 import ProductItem from '../../components/ProductList/productItem/productItem';
 
-import './productList.scss'
-
 function ProductList() {
   console.log('ProductList rendered');
   const dispatch = useDispatch();

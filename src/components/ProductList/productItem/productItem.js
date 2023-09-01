@@ -2,14 +2,13 @@ import { memo } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { addToCart, selectCart, updateCart } from "../../../features/cart/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
+import './productItem.scss'
 
 function ProductItem({product}) {
   const dispatch = useDispatch();
   const cart = useSelector(selectCart); 
 
   const handleAddToCart = () => {
-  console.log('Product added:', product);
-  console.log('Product id:',  product.id);
     if (cart.some(productCart => productCart.id === product.id)) {
       dispatch(updateCart({id: product.id, quantity: 1}));
     } else {

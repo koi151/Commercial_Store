@@ -1,9 +1,7 @@
 // Navigation/UserCartWrapper/userCartWrapper.scss
 
+@import '../../../../../styles/base.scss';
 @import '../../../../../styles/iconStyles.scss';
-
-$user-cart-bg-color: #c08218;
-$user-cart-icon-color: #fff;
 
 .user-cart-wrapper {
     display: flex;
@@ -15,13 +13,13 @@ $user-cart-icon-color: #fff;
 
     &__icon-wrapper {
         @extend %icon-wrapper;
-        background-color: $user-cart-bg-color;
+        background-color: $color-six;
     }
 
     &__icon {
         @extend %icon;
         font-weight: bolder;
-        color: $user-cart-icon-color;
+        color: $color-icon-one;
     }
 
     svg {

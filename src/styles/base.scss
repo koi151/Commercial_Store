@@ -7,8 +7,10 @@ $color-two-lighter: #0aa7b5;
 $color-three: #666;
 $color-four: #cecece;
 $color-five:  #f8b118;
+$color-six:  #c08218;
 
 $color-old-price:#9d9d9d;
+$color-icon-one: #fff;
 
 $roboto-font: 'Roboto', sans-serif;
 $roboto-condensed-font: 'Roboto Condensed', sans-serif;
@@ -30,7 +32,7 @@ body {
 }
 
 main {
-    margin-top: 8rem;
+    overflow: hidden;
 }
 
 .display-none {
