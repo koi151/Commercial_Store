@@ -5,12 +5,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialSearchState = {
   searchTerm: '',
   category: '',
-  sortbyPrice: false,
-  sortbyDiscount: false,
-  priceOrder: '',
-  discountOrder: '',
-  minPrice: '',
-  maxPrice: ''
 }
 
 const searchSlice = createSlice({
@@ -27,19 +21,6 @@ const searchSlice = createSlice({
     resetFilters: (state) => {
       Object.assign(state, initialSearchState);
     }
-    // LOCAL HOST ONLY ----------------------
-    // setDiscountSearch: (state, action) => {
-    //   state.sortbyDiscount = true
-    //   state.discountOrder = action.payload
-    // },
-    // setPriceSearch: (state, action) => {
-    //   state.sortbyPrice = true
-    //   state.priceOrder = action.payload;
-    // },
-    // setPriceRange: (state, action) => {
-    //   state.minPrice = action.payload.minPrice
-    //   state.maxPrice = action.payload.maxPrice
-    // },
   }
 })
 
@@ -47,11 +28,5 @@ export const { setSearchTerm, setCategorySearch, resetFilters } = searchSlice.ac
 
 export const getSearchTerm = (state) => state.search.searchTerm;
 export const getCategorySearch = (state) => state.search.category;
-// export const getSortByPriceState = (state) => state.search.sortbyPrice;
-// export const getPriceOrderSearch = (state) => state.search.priceOrder;
-// export const getSortByDiscountState = (state) => state.search.sortbyDiscount;
-// export const getDiscountOrderSearch = (state) => state.search.discountOrder;
-// export const getMinPrice = (state) => state.search.minPrice;
-// export const getMaxPrice = (state) => state.search.maxPrice;
 
 export default searchSlice.reducer

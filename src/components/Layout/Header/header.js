@@ -4,6 +4,7 @@ import ShortNotes from './ShortNotes/shortNotes';
 import './header.scss';
 
 function Header() {
+  
   useEffect(() => {
     const header = document.querySelector('header');
     let lastScrollTop = 0;

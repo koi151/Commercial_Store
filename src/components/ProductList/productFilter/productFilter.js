@@ -1,8 +1,7 @@
 import { memo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCategoriesLoadingStatus } from '../../../features/categories/categoriesSlice';
 import { setCategorySearch, resetFilters} from '../../../features/search/searchSlice';
-import { setCategories, getCategories } from '../../../features/categories/categoriesSlice';
+import { setCategories, getCategories, getCategoriesLoadingStatus } from '../../../features/categories/categoriesSlice';
 import { get } from '../../../utils/request';
 
 import { IoIosArrowDown } from "react-icons/io";
