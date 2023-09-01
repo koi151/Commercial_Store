@@ -18,38 +18,40 @@ const searchSlice = createSlice({
   initialState: initialSearchState,
   reducers: {
     setSearchTerm: (state, action) => {
+      Object.assign(state, initialSearchState);
       state.searchTerm = action.payload
     },
     setCategorySearch: (state, action) => {
       state.category = action.payload
     },
-    setDiscountSearch: (state, action) => {
-      state.sortbyDiscount = true
-      state.discountOrder = action.payload
-    },
-    setPriceSearch: (state, action) => {
-      state.sortbyPrice = true
-      state.priceOrder = action.payload;
-    },
-    setPriceRange: (state, action) => {
-      state.minPrice = action.payload.minPrice
-      state.maxPrice = action.payload.maxPrice
-    },
     resetFilters: (state) => {
       Object.assign(state, initialSearchState);
     }
+    // LOCAL HOST ONLY ----------------------
+    // setDiscountSearch: (state, action) => {
+    //   state.sortbyDiscount = true
+    //   state.discountOrder = action.payload
+    // },
+    // setPriceSearch: (state, action) => {
+    //   state.sortbyPrice = true
+    //   state.priceOrder = action.payload;
+    // },
+    // setPriceRange: (state, action) => {
+    //   state.minPrice = action.payload.minPrice
+    //   state.maxPrice = action.payload.maxPrice
+    // },
   }
 })
 
-export const { setSearchTerm, setPriceSearch, setPriceRange, setCategorySearch, setDiscountSearch } = searchSlice.actions;
+export const { setSearchTerm, setCategorySearch, resetFilters } = searchSlice.actions;
 
 export const getSearchTerm = (state) => state.search.searchTerm;
 export const getCategorySearch = (state) => state.search.category;
-export const getSortByPriceState = (state) => state.search.sortbyPrice;
-export const getPriceOrderSearch = (state) => state.search.priceOrder;
-export const getSortByDiscountState = (state) => state.search.sortbyDiscount;
-export const getDiscountOrderSearch = (state) => state.search.discountOrder;
-export const getMinPrice = (state) => state.search.minPrice;
-export const getMaxPrice = (state) => state.search.maxPrice;
+// export const getSortByPriceState = (state) => state.search.sortbyPrice;
+// export const getPriceOrderSearch = (state) => state.search.priceOrder;
+// export const getSortByDiscountState = (state) => state.search.sortbyDiscount;
+// export const getDiscountOrderSearch = (state) => state.search.discountOrder;
+// export const getMinPrice = (state) => state.search.minPrice;
+// export const getMaxPrice = (state) => state.search.maxPrice;
 
 export default searchSlice.reducer

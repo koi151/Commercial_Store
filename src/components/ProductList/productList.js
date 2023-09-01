@@ -2,7 +2,7 @@ import { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductList } from '../../services/getProductList'
 import { getProducts, getProductsLoadingStatus, setProducts } from '../../features/products/productsSlice';
-import { getSearchTerm, getPriceOrderSearch, getSortByPriceState, getMinPrice, getMaxPrice, getCategorySearch, getDiscountOrderSearch, getSortByDiscountState } from '../../features/search/searchSlice';
+import { getSearchTerm, getCategorySearch } from '../../features/search/searchSlice';
 
 import { FaCartPlus } from "react-icons/fa";
 import './productList.scss'
@@ -12,31 +12,32 @@ function ProductList() {
   const dispatch = useDispatch();
 
   const products = useSelector(getProducts);
-  const curCategorySearch = useSelector(getCategorySearch)
-  const curSearchTerm = useSelector(getSearchTerm);
   const productsLoading = useSelector(getProductsLoadingStatus);
-  const sortByDiscount = useSelector(getSortByDiscountState);
-  const discountOrder = useSelector(getDiscountOrderSearch);
-  const priceOrder = useSelector(getPriceOrderSearch);
-  const sortByPrice = useSelector(getSortByPriceState);
-  const minPrice = useSelector(getMinPrice);
-  const maxPrice = useSelector(getMaxPrice);
+  const curSearchTerm = useSelector(getSearchTerm);
+  const curCategorySearch = useSelector(getCategorySearch)
+
+  // LOCAL HOST ONLY ----------------  
+  // const priceOrder = useSelector(getPriceOrderSearch);
+  // const sortByPrice = useSelector(getSortByPriceState);
+  // const minPrice = useSelector(getMinPrice);
+  // const maxPrice = useSelector(getMaxPrice);  
+  // const discountOrder = useSelector(getDiscountOrderSearch);
+  // const sortByDiscount = useSelector(getSortByDiscountState);
 
   useEffect(() => {
     const fetchAPI = async () => {
       try {
         console.log('DATA FETCHING');
-        const result = await getProductList(curSearchTerm,curCategorySearch, sortByPrice, 
-                                            priceOrder, minPrice, maxPrice, sortByDiscount, discountOrder);
+        const result = await getProductList(curSearchTerm, curCategorySearch);
         dispatch(setProducts(result.products));
         console.log('DATA FETCHED');
       }
       catch (error) {
-        console.log('Error occured while fetching API:', error);
+        console.log('ERROR OCCURED WHILE FETCHING PRODUCTS API:', error);
       }
     }
     fetchAPI();
-  }, [curSearchTerm, curCategorySearch, priceOrder, minPrice, maxPrice, discountOrder]) // curSearchTerm
+  }, [curSearchTerm, curCategorySearch])
 
   return (
     <>

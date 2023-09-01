@@ -1,40 +1,36 @@
-import { memo, useState, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, getProductsLoadingStatus } from '../../../features/products/productsSlice';
-import { setSearchTerm, setPriceSearch, setPriceRange, setCategorySearch, setDiscountSearch } from '../../../features/search/searchSlice';
+import { getCategoriesLoadingStatus } from '../../../features/categories/categoriesSlice';
+import { setCategorySearch, resetFilters} from '../../../features/search/searchSlice';
+import { setCategories, getCategories } from '../../../features/categories/categoriesSlice';
+import { get } from '../../../utils/request';
 
 import { IoIosArrowDown } from "react-icons/io";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import './productFilter.scss'
 
-
 function ProductFilter() {
   console.log('ProductFilter rendered');
 
   const dispatch = useDispatch();
+  const categories = useSelector(getCategories);
+  const categoriesLoading = useSelector(getCategoriesLoadingStatus);
 
-  const products = useSelector(getProducts);
-  const productsLoading = useSelector(getProductsLoadingStatus);
-
-  const [categories, setCategories] = useState([])
-
-  useEffect(() => {
-    var uniqueCategories = new Set();
-
-    if (!productsLoading) {
-      products.forEach((product) => {
-        uniqueCategories.add(product.category);
-      })
-      setCategories([...uniqueCategories]);
+  useEffect (() => {
+    const fetchAPI = async () => {
+      try {
+        const result = await get('products/categories');
+        dispatch(setCategories(result));
+        console.log('CATEGORIES FETCHED SUCCESS');
+      } catch (error) {
+        console.log('ERROR OCCURED WHILE FETCHING CATEGORIES API:')
+      }
     }
-  }, [productsLoading])
+    fetchAPI();
+  }, [])
 
   const handleRadioChange = (e) => {
     dispatch(setCategorySearch(e.target.nextSibling.innerHTML));
-  }
-
-  const handleReset = () => {
-    dispatch(setSearchTerm(''));
   }
 
   const displayContent = (e) => {
@@ -44,12 +40,9 @@ function ProductFilter() {
     else content.classList.add('display-none');
   }
 
-  const updatePriceRange = () => {
-    let minPrice = document.querySelector('#min-price').value;
-    let maxPrice = document.querySelector('#max-price').value;
-    dispatch(setPriceRange({ minPrice, maxPrice }));
+  const commingSoonAlert = () => {
+    alert('THIS FEATURE WILL BE AVAILABLE SOON');
   }
-
 
   console.log('unique categories:', categories);
   return (
@@ -62,7 +55,7 @@ function ProductFilter() {
         </div>
 
         <div className='criteria-wrapper__criterias-list' id='criteria-wrapper'>
-          {productsLoading ? (
+          {categoriesLoading ? (
             <>Loading...</>
           ) : (
             <>
@@ -76,7 +69,7 @@ function ProductFilter() {
                   </div>
                 ))}
               </div>
-              <button className='reset-btn' onClick={handleReset}>
+              <button className='reset-btn' onClick={resetFilters}>
                 Reset
               </button>
             </>
@@ -93,14 +86,14 @@ function ProductFilter() {
         <div className='price-range-wrapper'>
           <input placeholder='Min:' id='min-price' className='price-range-wrapper__price-range'></input>
           <input placeholder='Max:' id='max-price' className='price-range-wrapper__price-range'></input>
-          <button className='price-range-update' onClick={updatePriceRange}>Update</button>
+          <button className='price-range-update' onClick={commingSoonAlert}>Update</button>
 
           <div className='price-trend-wrapper'>
-            <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setPriceSearch('asc'))}>
+            <button className='price-trend-wrapper__price-trend'>
               Ascend
               <FaArrowUp className='price-trend-wrapper__price-trend--icon' />
             </button>
-            <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setPriceSearch('desc'))}>
+            <button className='price-trend-wrapper__price-trend'>
               Descend
               <FaArrowDown className='price-trend-wrapper__price-trend--icon' />
             </button>
@@ -115,11 +108,11 @@ function ProductFilter() {
             onClick={e => displayContent(e)} />
         </div>
         <div className='price-trend-wrapper'>
-          <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setDiscountSearch('asc'))}>
+          <button className='price-trend-wrapper__price-trend' onClick={commingSoonAlert}>
             Ascend
             <FaArrowUp className='price-trend-wrapper__price-trend--icon' />
           </button>
-          <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setDiscountSearch('desc'))}>
+          <button className='price-trend-wrapper__price-trend' onClick={commingSoonAlert}>
             Descend
             <FaArrowDown className='price-trend-wrapper__price-trend--icon' />
           </button>
