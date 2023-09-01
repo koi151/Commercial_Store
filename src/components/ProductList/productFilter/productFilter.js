@@ -1,7 +1,7 @@
 import { memo, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts, getProductsLoadingStatus } from '../../../features/products/productsSlice';
-import { setSearchTerm, setAscendingPrice, setDescendingPrice, setPriceRange } from '../../../features/search/searchSlice';
+import { setSearchTerm, setPriceSearch, setPriceRange, setCategorySearch, setDiscountSearch } from '../../../features/search/searchSlice';
 
 import { IoIosArrowDown } from "react-icons/io";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
@@ -30,7 +30,7 @@ function ProductFilter() {
   }, [productsLoading])
 
   const handleRadioChange = (e) => {
-    dispatch(setSearchTerm(e.target.nextSibling.innerHTML));
+    dispatch(setCategorySearch(e.target.nextSibling.innerHTML));
   }
 
   const handleReset = () => {
@@ -47,7 +47,7 @@ function ProductFilter() {
   const updatePriceRange = () => {
     let minPrice = document.querySelector('#min-price').value;
     let maxPrice = document.querySelector('#max-price').value;
-    dispatch(setPriceRange({minPrice, maxPrice}));
+    dispatch(setPriceRange({ minPrice, maxPrice }));
   }
 
 
@@ -96,15 +96,33 @@ function ProductFilter() {
           <button className='price-range-update' onClick={updatePriceRange}>Update</button>
 
           <div className='price-trend-wrapper'>
-            <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setAscendingPrice())}>
+            <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setPriceSearch('asc'))}>
               Ascend
               <FaArrowUp className='price-trend-wrapper__price-trend--icon' />
             </button>
-            <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setDescendingPrice())}>
+            <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setPriceSearch('desc'))}>
               Descend
               <FaArrowDown className='price-trend-wrapper__price-trend--icon' />
             </button>
           </div>
+        </div>
+      </div>
+
+      <div className='criteria-wrapper'>
+        <div className='criteria-wrapper__title'>
+          <h2>BY PROMOTION:</h2>
+          <IoIosArrowDown className='criteria-wrapper__title--drop-down-icon'
+            onClick={e => displayContent(e)} />
+        </div>
+        <div className='price-trend-wrapper'>
+          <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setDiscountSearch('asc'))}>
+            Ascend
+            <FaArrowUp className='price-trend-wrapper__price-trend--icon' />
+          </button>
+          <button className='price-trend-wrapper__price-trend' onClick={() => dispatch(setDiscountSearch('desc'))}>
+            Descend
+            <FaArrowDown className='price-trend-wrapper__price-trend--icon' />
+          </button>
         </div>
       </div>
 

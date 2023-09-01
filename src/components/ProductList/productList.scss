@@ -1,11 +1,9 @@
 //  PRODUCT LIST SCSS
 @import '../../styles/base.scss';
 
-$color-product-price: #f8b118;
-
-$font-size-title: 2rem;
 $color-title: #000;
 
+$font-size-title: 2rem;
 $font-size-brand: 1.6rem;
 $font-size-stock: 1.4rem;
 
@@ -66,13 +64,19 @@ $add-to-cart-icon: 2.5rem;
                     flex-direction: column;
 
                     &--brand {
-                    font-size: $font-size-brand;
-                    padding: 0.2rem 0rem;   
+                        font-size: $font-size-brand;
+                        padding: 0.2rem 0rem;   
                     }
 
-                    &--price {
-                        color: $color-product-price;
-                        font-size: 1.8rem;
+                    &--price-normal {
+                        color: $color-old-price;
+                        font-size: 1.4rem;
+                        text-decoration: line-through;
+                    }
+
+                    &--price-discounted {
+                        color: $color-five;
+                        font-size: 1.9rem;
                         font-weight: bold;
                     }
                 }

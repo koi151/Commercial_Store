@@ -6,8 +6,11 @@ const searchSlice = createSlice({
   name: 'search',
   initialState: {
     searchTerm: '',
-    sortby: '',
-    order: '',
+    category: '',
+    sortbyPrice: false,
+    sortbyDiscount: false,
+    priceOrder: '',
+    discountOrder: '',
     minPrice: '',
     maxPrice: ''
   },
@@ -16,13 +19,16 @@ const searchSlice = createSlice({
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload
     },
-    setAscendingPrice: (state) => {
-      state.sortby = 'price'
-      state.order = 'asc'
+    setCategorySearch: (state, action) => {
+      state.category = action.payload
     },
-    setDescendingPrice: (state) => {
-      state.sortby = 'price'
-      state.order = 'desc'
+    setDiscountSearch: (state, action) => {
+      state.sortbyDiscount = true
+      state.discountOrder = action.payload
+    },
+    setPriceSearch: (state, action) => {
+      state.sortbyPrice = true
+      state.priceOrder = action.payload;
     },
     setPriceRange: (state, action) => {
       state.minPrice = action.payload.minPrice
@@ -31,11 +37,14 @@ const searchSlice = createSlice({
   }
 })
 
-export const { setSearchTerm, setAscendingPrice, setDescendingPrice, setPriceRange } = searchSlice.actions;
+export const { setSearchTerm, setPriceSearch, setPriceRange, setCategorySearch, setDiscountSearch } = searchSlice.actions;
 
 export const getSearchTerm = (state) => state.search.searchTerm;
-export const getSortBy = (state) => state.search.sortby;
-export const getOrder = (state) => state.search.order;
+export const getCategorySearch = (state) => state.search.category;
+export const getSortByPriceState = (state) => state.search.sortbyPrice;
+export const getPriceOrderSearch = (state) => state.search.priceOrder;
+export const getSortByDiscountState = (state) => state.search.sortbyDiscount;
+export const getDiscountOrderSearch = (state) => state.search.discountOrder;
 export const getMinPrice = (state) => state.search.minPrice;
 export const getMaxPrice = (state) => state.search.maxPrice;
 

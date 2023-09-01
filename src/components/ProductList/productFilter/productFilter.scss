@@ -90,26 +90,26 @@
             padding: 0.5rem 1rem;
             border-radius: 13px; 
         }
+    }
+}
 
-        .price-trend-wrapper {
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: row;
-            align-items: center;
-    
-            &__price-trend {
-                @extend %btn-style-one;
-                margin-top: 0.75rem;
-                margin-bottom: 1rem;
-                width: 9rem;
-                background-color: #fff;
-    
-                &--icon {
-                    font-size: 1.2rem;
-                    margin-left: 0.5rem;
-                    margin-bottom: 0.2rem;
-                }
-            }
+.price-trend-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+
+    &__price-trend {
+        @extend %btn-style-one;
+        margin-top: 0.75rem;
+        margin-bottom: 1rem;
+        width: 9rem;
+        background-color: #fff;
+
+        &--icon {
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+            margin-bottom: 0.2rem;
         }
     }
 }
