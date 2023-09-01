@@ -2,19 +2,20 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // http://localhost:3002/products?q=&price_gte=10&price_lte=300&_sort=price&_order=asc
 
+const initialSearchState = {
+  searchTerm: '',
+  category: '',
+  sortbyPrice: false,
+  sortbyDiscount: false,
+  priceOrder: '',
+  discountOrder: '',
+  minPrice: '',
+  maxPrice: ''
+}
+
 const searchSlice = createSlice({
   name: 'search',
-  initialState: {
-    searchTerm: '',
-    category: '',
-    sortbyPrice: false,
-    sortbyDiscount: false,
-    priceOrder: '',
-    discountOrder: '',
-    minPrice: '',
-    maxPrice: ''
-  },
-
+  initialState: initialSearchState,
   reducers: {
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload
@@ -33,6 +34,9 @@ const searchSlice = createSlice({
     setPriceRange: (state, action) => {
       state.minPrice = action.payload.minPrice
       state.maxPrice = action.payload.maxPrice
+    },
+    resetFilters: (state) => {
+      Object.assign(state, initialSearchState);
     }
   }
 })

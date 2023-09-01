@@ -28,7 +28,7 @@ function ProductList() {
         console.log('DATA FETCHING');
         const result = await getProductList(curSearchTerm,curCategorySearch, sortByPrice, 
                                             priceOrder, minPrice, maxPrice, sortByDiscount, discountOrder);
-        dispatch(setProducts(result));
+        dispatch(setProducts(result.products));
         console.log('DATA FETCHED');
       }
       catch (error) {

@@ -16,12 +16,6 @@ $add-to-cart-icon: 2.5rem;
         width: 80rem;
     }
 
-    .product-list-title {
-        text-align: center;
-        font-weight: bold;
-        margin: 2rem 0rem;
-    }
-
     .product {
         border-radius: 10px;
         position: relative;
@@ -42,11 +36,14 @@ $add-to-cart-icon: 2.5rem;
             padding: 2rem;
 
             &--title {
+                height: 4rem;
                 display: flex;
+                align-items: center;
                 flex-wrap: nowrap;
                 font-size: $font-size-title;
                 font-weight: bold;
                 color: $color-title;
+                
             }
             
             .content {

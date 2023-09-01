@@ -4,11 +4,11 @@ import { get } from '../utils/request';
 
 export const getProductList = async (searchTerm, curCategorySearch, sortByPrice, 
                                     priceOrder, minPrice, maxPrice, sortByDiscount, discountOrder) => {
-   let endpoint = 'products/?q=';
+   let endpoint = 'products';
    if (searchTerm)   
-      endpoint += `${searchTerm}`
+      endpoint += `/search?q=${searchTerm}`
    if (curCategorySearch)
-      endpoint += `&category=${curCategorySearch}`
+      endpoint += `/category${curCategorySearch}`
    if (sortByPrice)
       endpoint += `&_sort=price&_order=${priceOrder}`
    if (minPrice)

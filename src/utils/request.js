@@ -1,5 +1,5 @@
-const API_DOMAIN = "http://localhost:3002/";
-// const API_DOMAIN = "https://dummyjson.com/";
+// const API_DOMAIN = "http://localhost:3002/";
+const API_DOMAIN = "https://dummyjson.com/";
 
 export const get = async (path, options) => {
   console.log('CURRENT PATH:', API_DOMAIN + path);
