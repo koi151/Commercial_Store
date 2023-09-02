@@ -6,7 +6,11 @@ import { IoCartOutline } from "react-icons/io5";
 import './cartList.scss'
 
 function CartList() {
-  var cart = useSelector(selectCart);
+  const cart = useSelector(selectCart);
+  const total = cart.reduce((sum, item) => {
+    const newPrice = item.info.price - item.info.price * (item.info.discountPercentage / 100).toFixed(0);
+    return sum + newPrice * item.quantity;
+  }, 0)
 
   return (
     <>
@@ -56,6 +60,21 @@ function CartList() {
               </input>
               <button className="payment__form--submit-btn">Apply</button>
             </form>
+            <ul className="payment__summary">
+              <li className="payment__summary--sub-total">
+                <h3>Sub total</h3>
+                <h3>${total}</h3>
+              </li>
+              <li className="payment__summary--shipping-fee">
+                <h3>Shipping fee</h3>
+                <h3>$0</h3>
+              </li>
+              <li className="payment__summary--total">
+                <h3>Order total</h3>
+                <h3>${total}</h3>
+              </li>
+            </ul>
+            <button className="payment__checkout-btn">Proceed to checkout</button>
           </div>
         </div>
       </div>

@@ -34,6 +34,8 @@ $cart-padding: 3rem;
             width: 80rem;
             display: flex;
             flex-direction: column;
+            overflow-y: scroll;
+            height: 60rem;
             .cart {
                 position: relative;
                 display: flex;
@@ -102,13 +104,15 @@ $cart-padding: 3rem;
         }
 
         .payment {
+            position: relative;
             width: calc(100% - 65rem);
             display: flex;
             flex-direction: column;
             padding: 3rem;
             box-shadow:rgba(0, 0, 0, 0.12) 0px 8px 24px 0px;
             margin-left: 2rem;
-            max-height: 35rem;
+            overflow: hidden;
+            max-height: 53rem;
 
             &__title {
                 color: $color-two-lighter;
@@ -116,7 +120,7 @@ $cart-padding: 3rem;
                 font-weight: 600;
                 margin-top: 0;
                 width: 100%;
-                height: 4.5rem;
+                padding-bottom: 2rem;
                 border-bottom: 1px solid #ccc;
             }
 
@@ -128,6 +132,7 @@ $cart-padding: 3rem;
             &__form {
                 margin: 1rem 0rem;
                 overflow: hidden;
+                border-bottom: 1px solid #ccc;
 
                 &--input {
                     font-size: 2rem;
@@ -150,6 +155,55 @@ $cart-padding: 3rem;
                     text-transform: uppercase;
                 }
             }
+
+            &__summary {
+                border-top: 1px solid #ddd;
+                padding: 2rem 0rem;
+                margin: 2rem 0rem;
+                text-transform: uppercase;
+                list-style-type: none;
+
+                &--sub-total, &--shipping-fee {
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3 {
+                        margin-bottom: 2cqw;
+                        font-size: 1.9rem;
+                    }
+                }
+
+                &--total {
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3 {
+                        margin-bottom: 2rem;
+                        font-size: 2.4rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            &__checkout-btn {
+                width: calc(100% - 6rem);
+                margin-bottom: 3rem;
+                position: absolute;
+                bottom: 0;
+                padding: 1.25rem;
+                background-color: $color-two-lighter;
+                color: #fff;
+                border: none;
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 600;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: $color-two-lighter-hover;
+                }  
+            }
+
         }
     }
 }
