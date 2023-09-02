@@ -1,4 +1,6 @@
-// NAVIGATION SCSS
+@import '../../../../styles/base.scss';
+@import '../../../../styles/iconStyles.scss';
+
 $color-bg-nav: #241f1f;
 
 nav {
@@ -17,4 +19,21 @@ nav {
         align-items: center;
         justify-content: space-between;
     }
+}
+
+// NAVIGATION RESPONSIVE
+@media (max-width: 1200px) {
+    .search-bar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-wrapper {
+        display: none;  
+    }
+
+    .menu-bar {
+        display: flex;
+    } 
 }

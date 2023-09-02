@@ -8,7 +8,7 @@ function Products() {
   return (
     <>
       <section className='mini-section'>
-        <img src='https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg' className='mini-section__bg'></img>
+        <img src='https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg' className='mini-section__bg' alt='background-img'></img>
         <h1 className='mini-section__title'>Home:</h1>
       </section>
       <div className='container'>

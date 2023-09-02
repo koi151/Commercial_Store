@@ -1,10 +1,20 @@
 // MENU LIST SCSS
 @import '../../../../../styles//base.scss';
+@import '../../../../../styles/iconStyles.scss';
 
 $menu-wrapper-size: 40rem;
 
 $color-menu-text: #fff;
 $color-menu-hover: #c08218;
+
+.menu-bar {
+    display: none;
+    @extend %icon-wrapper;
+
+    &__icon {
+        @extend %icon;
+    }
+}
 
 .menu-wrapper {
     font-family: $barlow-condensed-font;

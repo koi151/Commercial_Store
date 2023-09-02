@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom';
-import { routes } from '../../../../../routes/routes'; 
+import { routes } from '../../../../../routes/routes';
+
+import { AiOutlineMenu } from "react-icons/ai";
 import './menuList.scss'
 
 function MenuList() {
@@ -28,6 +30,9 @@ function MenuList() {
   const menuList = getMenu();
   return (
     <>
+      <div className='menu-bar'>
+        <AiOutlineMenu className='menu-bar__icon'/>
+      </div>
       <ul className='menu-wrapper'>
         {menuList && (
           <>

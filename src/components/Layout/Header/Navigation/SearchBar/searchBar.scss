@@ -1,4 +1,7 @@
-/*Recommend   font-family: 'Lato'*/
+@import '../../../../../styles/base.scss';
+
+$search-bar-width: 250px;
+
 .search-bar {
     height: 100%;
     width: fit-content;
@@ -25,7 +28,7 @@
         pointer-events: painted;
 
         &:focus~.input-search {
-            width: 250px;
+            width: $search-bar-width;
             border-radius: 0px;
             background-color: #fff;
             /*   focus: underline  */
@@ -35,8 +38,6 @@
     }
 
     .input-search {
-        // height: 50px;
-        // width: 50px;
         width: 45px;
         height: 50px;
         border-style: none;
@@ -59,7 +60,7 @@
         }
 
         &:focus {
-            width: 250px;
+            width: $search-bar-width;
             border-radius: 0px;
             background-color: #fff;
             /*   underline appear while typing*/
@@ -69,3 +70,4 @@
 
     }
 }
+
