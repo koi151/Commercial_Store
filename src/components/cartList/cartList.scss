@@ -1,96 +1,153 @@
 @import '../../styles//base.scss';
 
 $product-max-width: 28rem;
-$cart-padding: 2rem;
+$cart-padding: 3rem;
 
 .carts-wrapper {
     font-family: $barlow-condensed-font;
     position: relative;
     width: 100%;
-
+    
     &__title {
+        display: flex;
+        align-items: center;
+        color: $color-old-price;
         font-family: $barlow-condensed-font;
-        font-size: 4rem;
+        font-size: 2rem;
         text-transform: uppercase;
-        text-align: center;
-        margin-top: 4rem;
-        margin-bottom: 0;
+        margin-top: 3rem;
+
+        &--icon {
+            margin-left: .5rem;
+            font-size: 2rem;
+        }
     }
 
     .carts-wrapper__display {
         position: relative;
-        margin-top: 4rem;
+        margin-top: 3rem;
         width: 100%;
         display: flex;
-        flex-direction: column;
-        // align-items: center;
+        flex-direction: row;
 
-        .cart {
-            position: relative;
-            max-width: 65rem;
+        .cart-wrapper {
+            width: 80rem;
             display: flex;
-            padding: $cart-padding;
-            box-shadow:rgba(0, 0, 0, 0.12) 0px 8px 24px 0px;
-            margin-bottom: 3rem;
-
-            &__product-img {
+            flex-direction: column;
+            .cart {
                 position: relative;
-                max-width: $product-max-width;
-                height: auto;
-                aspect-ratio: 4/3;
-                object-fit: cover;
+                display: flex;
+                padding: $cart-padding;
+                box-shadow:rgba(0, 0, 0, 0.12) 0px 8px 24px 0px;
+                margin-bottom: 3rem;
 
+                &__product-img {
+                    position: relative;
+                    max-width: $product-max-width;
+                    height: auto;
+                    aspect-ratio: 4/3;
+                    object-fit: cover;
+                }
+
+                &__info {
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 3rem;
+
+                    &--title {
+                        font-family: $barlow-condensed-font;
+                        font-weight: 600;
+                        font-size: 2.5rem;
+                    }
+        
+                    &--price {
+                        color: $color-old-price;
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                        letter-spacing: 0.05rem;
+                        text-decoration: line-through;
+                    }
+
+                    &--promo-price {
+                        font-size: 2rem;
+                        font-weight: 500;
+                        letter-spacing: 0.05rem;
+                    }
+        
+                    &--quantity {
+                        font-size: 2rem;
+                    }
+                    
+                    .summary-cart {
+                        position: absolute;
+                        width: 80%;
+                        padding-top: 0.5rem;
+                        bottom: 0;
+                        border-top: 1px solid #ddd;
+
+                        &--saved-price {
+                            color: $color-old-price;
+                        }
+
+                        &--total-price {
+                            color: $color-two-lighter;
+                            font-size: 2.2rem;   
+                            font-weight: 500;                   
+                        }
+                    }
+                }
+            }
+        }
+
+        .payment {
+            width: calc(100% - 65rem);
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            box-shadow:rgba(0, 0, 0, 0.12) 0px 8px 24px 0px;
+            margin-left: 2rem;
+            max-height: 35rem;
+
+            &__title {
+                color: $color-two-lighter;
+                font-size: 2.8rem;
+                font-weight: 600;
+                margin-top: 0;
+                width: 100%;
+                height: 4.5rem;
+                border-bottom: 1px solid #ccc;
             }
 
-            &__info {
-                position: relative;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                margin-left: 3rem;
+            &__promo-title {
+                text-transform: uppercase;
+                font-size: 2.2rem;
+            }
 
-                &--title {
-                    font-family: $barlow-condensed-font;
-                    font-weight: 600;
-                    font-size: 2.5rem;
+            &__form {
+                margin: 1rem 0rem;
+                overflow: hidden;
+
+                &--input {
+                    font-size: 2rem;
+                    height: 100%;
+                    width: 30rem;
+                    padding: 1rem;
+
+                    &:focus {
+                        outline: none;
+                    }
                 }
-    
-                &--price {
-                    color: $color-old-price;
+
+                &--submit-btn {
+                    height: 100%;
+                    width: calc(100% - 30rem);
+                    background-color: #000;
+                    color: #fff;
                     font-size: 1.8rem;
                     font-weight: 500;
-                    letter-spacing: 0.05rem;
-                    text-decoration: line-through;
-                }
-
-                &--promo-price {
-                    font-size: 2rem;
-                    font-weight: 500;
-                    letter-spacing: 0.05rem;
-                }
-    
-                &--quantity {
-                    font-size: 2rem;
-                }
-                
-                .summary-cart {
-                    // display: flex;
-                    position: absolute;
-                    width: 80%;
-                    padding-top: 0.5rem;
-                    bottom: 0;
-                    border-top: 1px solid #ddd;
-
-                    &--saved-price {
-                        color: $color-old-price;
-                        // font-size: 2.2rem;                      
-                    }
-
-                    &--total-price {
-                        color: $color-two-lighter;
-                        font-size: 2.2rem;   
-                        font-weight: 500;                   
-                    }
+                    text-transform: uppercase;
                 }
             }
         }
