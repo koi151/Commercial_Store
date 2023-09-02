@@ -10,9 +10,7 @@ function Layout() {
   return (
     <>
       <Header />
-      <main className='main-wrapper'>
-        <Outlet />
-      </main>
+      <Outlet />
       <Footer />
     </>
   )

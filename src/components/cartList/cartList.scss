@@ -1,0 +1,98 @@
+@import '../../styles//base.scss';
+
+$product-max-width: 28rem;
+$cart-padding: 2rem;
+
+.carts-wrapper {
+    font-family: $barlow-condensed-font;
+    position: relative;
+    width: 100%;
+
+    &__title {
+        font-family: $barlow-condensed-font;
+        font-size: 4rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 0;
+    }
+
+    .carts-wrapper__display {
+        position: relative;
+        margin-top: 4rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+
+        .cart {
+            position: relative;
+            max-width: 65rem;
+            display: flex;
+            padding: $cart-padding;
+            box-shadow:rgba(0, 0, 0, 0.12) 0px 8px 24px 0px;
+            margin-bottom: 3rem;
+
+            &__product-img {
+                position: relative;
+                max-width: $product-max-width;
+                height: auto;
+                aspect-ratio: 4/3;
+                object-fit: cover;
+
+            }
+
+            &__info {
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 3rem;
+
+                &--title {
+                    font-family: $barlow-condensed-font;
+                    font-weight: 600;
+                    font-size: 2.5rem;
+                }
+    
+                &--price {
+                    color: $color-old-price;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    letter-spacing: 0.05rem;
+                    text-decoration: line-through;
+                }
+
+                &--promo-price {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    letter-spacing: 0.05rem;
+                }
+    
+                &--quantity {
+                    font-size: 2rem;
+                }
+                
+                .summary-cart {
+                    // display: flex;
+                    position: absolute;
+                    width: 80%;
+                    padding-top: 0.5rem;
+                    bottom: 0;
+                    border-top: 1px solid #ddd;
+
+                    &--saved-price {
+                        color: $color-old-price;
+                        // font-size: 2.2rem;                      
+                    }
+
+                    &--total-price {
+                        color: $color-two-lighter;
+                        font-size: 2.2rem;   
+                        font-weight: 500;                   
+                    }
+                }
+            }
+        }
+    }
+}

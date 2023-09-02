@@ -1,28 +1,5 @@
 @import '../../styles/base.scss';
 
-$title-size: 4.5rem; 
-
-.mini-section {
-    position: relative;
-
-    &__bg {
-        height: 100%;
-        max-width: 100%;
-        vertical-align: middle;
-        object-fit: cover;
-    }
-
-    &__title {
-        font-family: $barlow-condensed-font;
-        font-size: $title-size;
-        position: relative;
-        margin-top: -8rem;
-        margin-left: 3.5rem;
-        color: #fff;
-        text-transform: uppercase;
-    }
-}
-
 .products-display-wrapper {
     display: flex;
     padding: 2rem 0rem;

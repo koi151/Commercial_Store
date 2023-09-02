@@ -39,4 +39,23 @@ main {
     display: none;
 }
 
-        
+.mini-section {
+    position: relative;
+
+    &__bg {
+        height: 100%;
+        max-width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+    }
+
+    &__title {
+        font-family: $barlow-condensed-font;
+        font-size: 4.5rem;
+        position: relative;
+        margin-top: -8rem;
+        margin-left: 3.5rem;
+        color: #fff;
+        text-transform: uppercase;
+    }
+}
