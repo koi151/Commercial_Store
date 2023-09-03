@@ -56,9 +56,8 @@ function CartList() {
             <h1 className="payment__title">Summary:</h1>
             <h2 className="payment__promo-title">Promo code</h2>
             <form className="payment__form">
-              <input type="text" placeholder="Input promo code..." className="payment__form--input">
-              </input>
-              <button className="payment__form--submit-btn">Apply</button>
+              <input type="text" placeholder="Input promo code..." className="payment__form--input"/>
+              <button className="payment__form--submit-btn" id="submit-promo-code">Apply</button>
             </form>
             <ul className="payment__summary">
               <li className="payment__summary--sub-total">

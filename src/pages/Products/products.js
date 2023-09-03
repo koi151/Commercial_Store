@@ -7,11 +7,9 @@ function Products() {
   console.log('Products rendered');
   return (
     <>
-      <section className='mini-section'>
-        <img src='https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg' className='mini-section__bg' alt='background-img'></img>
-        <h1 className='mini-section__title'>Home:</h1>
-      </section>
+      <img src='https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg' className='current-page-bg' alt='current-page-bg'></img>
       <div className='container'>
+        <h1 className='current-page-title'>Home:</h1>
         <div className='products-display-wrapper'>
           <ProductFilter />
           <ProductList />

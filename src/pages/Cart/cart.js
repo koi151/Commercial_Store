@@ -4,11 +4,9 @@ import CartList from "../../components/cartList/cartList";
 function Cart() {
   return (
     <>
-      <section className='mini-section'>
-        <img src='https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg' className='mini-section__bg'></img>
-        <h1 className='mini-section__title'>cart:</h1>
-      </section>
+      <img src='https://sierradesigns.com/images/stencil/original/image-manager/default-plp.jpg' className='current-page-bg' alt='current-page-bg'></img>
       <div className="container">
+        <h1 className='current-page-title'>Home:</h1>
         <CartList />
       </div>
     </>

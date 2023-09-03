@@ -1,0 +1,35 @@
+@import '../../../../styles/base.scss';
+
+.menu-wrapper-two {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    font-family: $barlow-condensed-font;
+    border-top: 1px solid $color-five;
+    list-style-type: none;
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #000;
+        padding: 1.6rem 0rem;
+        border-bottom: 1px solid #252525;
+
+        a {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            transition: all .3s;
+            font-weight: 500;
+
+            &:hover {
+                color: $color-five;
+            }
+
+        }
+
+    }
+}

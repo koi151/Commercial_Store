@@ -2,5 +2,12 @@
 @import '../../styles/base.scss';
 
 .products-wrapper {
-    display: flex;
+    // max-height: 85rem;
+    // overflow-x: scroll;
+    .row {
+        display: flex;
+        flex-direction: row !important;
+        // max-height: 85rem;
+        // overflow-x: scroll;
+    }
 }

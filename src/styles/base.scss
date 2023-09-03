@@ -38,6 +38,7 @@ html {
 
 body {
     font-size: 1.6rem;
+    // overflow-y: hidden;
 }
 
 main {
@@ -48,23 +49,76 @@ main {
     display: none;
 }
 
-.mini-section {
-    position: relative;
-
-    &__bg {
-        height: 100%;
-        max-width: 100%;
-        vertical-align: middle;
-        object-fit: cover;
-    }
-
-    &__title {
-        font-family: $barlow-condensed-font;
-        font-size: 4.5rem;
-        position: relative;
-        margin-top: -8rem;
-        margin-left: 3.5rem;
-        color: #fff;
-        text-transform: uppercase;
-    }
+.active-flex {
+    display: flex;
 }
+
+.current-page-bg {
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.current-page-title {
+    font-family: $barlow-condensed-font;
+    font-size: 4.5rem;
+    position: relative;
+    margin-top: -8rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.container {
+    // max-width: 1200px;
+    align-items: center;
+  }
+
+  @media (min-width: 400px) {
+    .container {
+      max-width: 350px;
+    }
+  }
+
+  @media (min-width: 570px) {
+    .container {
+      max-width: 520px;
+    }
+  }
+  
+  @media (min-width: 650px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 740px;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .container {
+        max-width: 850px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 930px;
+    }
+  }
+  
+  @media (min-width: 1080px) {
+    .container {
+        max-width: 1060px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+  }
+  

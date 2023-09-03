@@ -9,6 +9,8 @@ $color-menu-hover: #c08218;
 
 .menu-bar {
     display: none;
+    border: none;
+    cursor: pointer;
     @extend %icon-wrapper;
 
     &__icon {

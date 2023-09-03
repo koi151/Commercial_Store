@@ -2,6 +2,7 @@ import { memo, useEffect } from 'react';
 import Navigation from './Navigation/navigation';
 import ShortNotes from './ShortNotes/shortNotes';
 import './header.scss';
+import MenuNav from './MenuNav/menuNav';
 
 function Header() {
   
@@ -28,6 +29,7 @@ function Header() {
       <header>
         <ShortNotes />
         <Navigation />
+        <MenuNav />
       </header>
     </>
   );

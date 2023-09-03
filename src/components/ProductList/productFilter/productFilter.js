@@ -61,10 +61,10 @@ function ProductFilter() {
               <div className='radio-wrapper-all'>
                 {categories.map((category, index) => (
                   <div className='radio-wrapper' key={index}>
-                    <input type='radio' className='criteria-radio' id='criteria-radio' name='criteria'
-                      key={index} onChange={(e) => handleRadioChange(e)}>
+                    <input type='radio' className='criteria-radio' id={`criteria-radio-${index}`} 
+                           name='criteria' key={index} onChange={(e) => handleRadioChange(e)}>
                     </input>
-                    <label htmlFor='radio-label' className='radio-label'>{category}</label>
+                    <label htmlFor={`criteria-radio-${index}`} className='radio-label'>{category}</label>
                   </div>
                 ))}
               </div>

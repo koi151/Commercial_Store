@@ -1,7 +1,7 @@
 @import '../../../../styles/base.scss';
 @import '../../../../styles/iconStyles.scss';
 
-$color-bg-nav: #241f1f;
+$color-bg-nav: #000;
 
 nav {
     background-color: $color-bg-nav;
@@ -35,5 +35,16 @@ nav {
 
     .menu-bar {
         display: flex;
+        margin-left: 3.5rem;
     } 
 }
+
+// @media (max-width: 576px) {
+//     nav {
+
+//         .container {
+//             justify-content: space-around;
+//         }
+        
+//     }
+// }

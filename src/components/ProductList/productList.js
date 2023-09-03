@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductList } from '../../services/getProductList'
 import { getProducts, getProductsLoadingStatus, setProducts } from '../../features/products/productsSlice';
 import { getSearchTerm, getCategorySearch } from '../../features/search/searchSlice';
+
 import ProductItem from '../../components/ProductList/productItem/productItem';
+import './productList.scss';
 
 function ProductList() {
   console.log('ProductList rendered');
