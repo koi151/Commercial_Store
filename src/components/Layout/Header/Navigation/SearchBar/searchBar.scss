@@ -1,6 +1,7 @@
 @import '../../../../../styles/base.scss';
 
-$search-bar-width: 250px;
+$search-bar-width: 25rem;
+$search-icon-size: 5rem;
 
 .search-bar {
     height: 100%;
@@ -13,17 +14,16 @@ $search-bar-width: 250px;
         align-items: center;
         justify-content: center;
         background-color: #555;
-        width: 50px;
-        height: 50px;
+        width: $search-icon-size;
+        height: $search-icon-size;
         border-style: none;
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 2rem;
         outline: none;
         cursor: pointer;
         position: absolute;
         right: 0px;
         /*    color of the glass */
-        color: #000;
+        color: #fff;
         background-color: transparent;
         pointer-events: painted;
 
@@ -38,17 +38,17 @@ $search-bar-width: 250px;
     }
 
     .input-search {
-        width: 45px;
-        height: 50px;
+        width: 4.5rem;
+        height: $search-icon-size;
         border-style: none;
-        padding: 10px;
+        padding: 1rem;
         font-size: 1.6rem;
         outline: none;
         border-radius: 10px;
         transition: all .5s ease-in-out;
         /*   color of the circle cover glass */
-        background-color: #fff;
-        padding-right: 40px;
+        background-color: $color-six;
+        padding-right: 4rem;
         /*   searching text color */
         color: #555;
 

@@ -33,3 +33,9 @@
 
     }
 }
+
+.menu__link {
+    &:active {
+        color: $color-five;
+    }
+}

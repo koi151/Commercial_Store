@@ -40,7 +40,7 @@ function ProductList() {
           ) : (
             <>
               {products.map((product, index) => (
-                <div className="col-lg-4" key={index}>
+                <div className="col-lg-4 col-md-6" key={index}>
                   <ProductItem product={product} key={product.id}/>
                 </div>
               ))}

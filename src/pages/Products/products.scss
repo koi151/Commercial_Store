@@ -1,6 +1,85 @@
 @import '../../styles/base.scss';
 
 .products-display-wrapper {
+    position: relative;
     display: flex;
     padding: 2rem 0rem;
+}
+
+// RESPONSIVE
+@media (min-width: 0px) {
+
+    .criterias-wrapper {
+        width: 35%;
+    }
+
+    .products-wrapper {
+        width: 65%;
+        .row {
+            .col-md-6 {
+                display: flex;
+                justify-content: center;    
+                .product {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .criterias-wrapper {    
+        .criteria-wrapper {
+            &__criterias-list {
+                .radio-wrapper-all {
+                    .radio-wrapper {
+                        .radio-label {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 496px) {
+
+}
+
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+
+    .criterias-wrapper {    
+        .criteria-wrapper {
+            &__criterias-list {
+                .radio-wrapper-all {
+                    .radio-wrapper {
+                        .radio-label {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
+
+@media (min-width: 768px) {
+
+    .products-wrapper {
+        width: 78%;
+        .row {
+            .col-md-6 {
+                display: flex;
+                .product {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .criterias-wrapper {
+        width: 22%;
+    }
 }

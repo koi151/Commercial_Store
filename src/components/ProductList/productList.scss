@@ -2,12 +2,10 @@
 @import '../../styles/base.scss';
 
 .products-wrapper {
-    // max-height: 85rem;
-    // overflow-x: scroll;
+    position: relative;
+    width: 78%;
     .row {
         display: flex;
-        flex-direction: row !important;
-        // max-height: 85rem;
-        // overflow-x: scroll;
+
     }
 }

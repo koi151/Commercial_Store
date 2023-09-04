@@ -22,29 +22,67 @@ nav {
 }
 
 // NAVIGATION RESPONSIVE
-@media (max-width: 1200px) {
+@media (min-width: 0px) {
     .search-bar {
         display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-wrapper {
-        display: none;  
     }
 
     .menu-bar {
         display: flex;
         margin-left: 3.5rem;
     } 
+
+    .menu-wrapper {
+        display: none;
+    }
+
+    .user-cart-wrapper {
+        width: 14rem;
+    }  
 }
 
-// @media (max-width: 576px) {
-//     nav {
+@media (min-width: 350px) {
 
-//         .container {
-//             justify-content: space-around;
-//         }
-        
-//     }
-// }
+}
+
+@media (min-width: 420px) {
+    .user-cart-wrapper {
+        width: 15rem;
+    }
+
+}
+
+@media (min-width: 496px) {
+}
+
+@media (min-width: 768px) {
+    .menu-wrapper {
+        display: flex;
+    }
+
+    .menu-bar {
+        display: none;
+    } 
+
+    .user-cart-wrapper {
+        width: 16rem;
+    }
+
+    .menu-wrapper-two {
+        display: none !important;
+    }
+}
+
+@media (min-width: 991px) {
+}
+
+@media (min-width: 1080px) {
+    
+}
+
+@media (min-width: 1200px) {
+    .search-bar {
+        display: flex;
+    }
+}
+

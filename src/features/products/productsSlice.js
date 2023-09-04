@@ -20,6 +20,5 @@ export const { setProducts } = productsSlice.actions;
 
 export const getProducts = (state) => state.products.data;
 export const getProductsLoadingStatus = (state) => state.products.loading;
-// export const getProductsLoadingStatus = (state) => state.products.loading;
 
 export default productsSlice.reducer;

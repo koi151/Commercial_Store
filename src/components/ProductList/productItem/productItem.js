@@ -14,7 +14,6 @@ function ProductItem({product}) {
     } else {
       dispatch(addToCart({id: product.id, info: product}));
     }
-    console.log('CURRENT CART:', cart);
   }
 
   return (

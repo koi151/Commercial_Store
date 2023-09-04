@@ -29,10 +29,28 @@ $libre-franklin-font: 'Libre Franklin', sans-serif;
 }
 
 html {
-    font-size: 10px;
+    @media (min-width: 0) {
+      font-size: 7px;
+    }
 
-    @media (max-width: 991px) {
-        font-size: 10px * 0.9;
+    @media (min-width: 350px) {
+      font-size: 7.5px;
+    }
+
+    @media (min-width: 420px) {
+      font-size: 8px;
+    }
+
+    @media (min-width: 576px) {
+      font-size: 9px;
+    }
+
+    @media (min-width: 991px) {
+      font-size: 8.5px;
+    }
+
+    @media (min-width: 1080px) {
+      font-size: 10px;
     }
 }
 
@@ -72,53 +90,4 @@ main {
 .container {
     // max-width: 1200px;
     align-items: center;
-  }
-
-  @media (min-width: 400px) {
-    .container {
-      max-width: 350px;
-    }
-  }
-
-  @media (min-width: 570px) {
-    .container {
-      max-width: 520px;
-    }
-  }
-  
-  @media (min-width: 650px) {
-    .container {
-      max-width: 640px;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .container {
-      max-width: 740px;
-    }
-  }
-  
-  @media (min-width: 900px) {
-    .container {
-        max-width: 850px;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .container {
-      max-width: 930px;
-    }
-  }
-  
-  @media (min-width: 1080px) {
-    .container {
-        max-width: 1060px;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .container {
-        max-width: 1170px;
-    }
-  }
-  
+  } 

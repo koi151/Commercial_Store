@@ -2,6 +2,7 @@
 
 $product-max-width: 28rem;
 $cart-padding: 3rem;
+$promo-input-width: 28rem;
 
 .carts-wrapper {
     font-family: $barlow-condensed-font;
@@ -15,7 +16,8 @@ $cart-padding: 3rem;
         font-family: $barlow-condensed-font;
         font-size: 2rem;
         text-transform: uppercase;
-        margin-top: 3rem;
+        margin-top: 5rem;
+        margin-bottom: 0;
 
         &--icon {
             margin-left: .5rem;
@@ -25,7 +27,6 @@ $cart-padding: 3rem;
 
     .carts-wrapper__display {
         position: relative;
-        margin-top: 3rem;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -137,7 +138,7 @@ $cart-padding: 3rem;
                 &--input {
                     font-size: 2rem;
                     height: 100%;
-                    width: 30rem;
+                    width: $promo-input-width;
                     padding: 1rem;
 
                     &:focus {
@@ -147,7 +148,7 @@ $cart-padding: 3rem;
 
                 &--submit-btn {
                     height: 100%;
-                    width: calc(100% - 30rem);
+                    width: calc(100% - $promo-input-width);
                     background-color: #000;
                     color: #fff;
                     font-size: 1.8rem;

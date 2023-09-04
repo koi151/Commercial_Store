@@ -9,3 +9,69 @@ $container-max-widths: (
   lg: 960px,
   xl: 1200px
 );
+
+@media (min-width: 200px) {
+  .container {
+    max-width: 260px;
+  }
+}
+
+@media (min-width: 350px) {
+  .container {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 420px) {
+  .container {
+    max-width: 370px;
+  }
+}
+
+@media (min-width: 496px) {
+  .container {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 680px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+      max-width: 840px;
+  }
+}
+
+@media (min-width: 991px) {
+  .container {
+    max-width: 920px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .container {
+      max-width: 1040px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: 1140px;
+  }
+}
